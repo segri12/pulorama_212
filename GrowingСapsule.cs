@@ -1,15 +1,11 @@
 using UnityEngine;
 
-public class Growing—apsule : MonoBehaviour
+public class GrowingCapsule : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] private float _growSpeed = 0.09f;
 
     private void Update()
     {
-        var nextScale = transform.localScale;
-        nextScale.x += _speed * Time.deltaTime;
-        nextScale.y += _speed * Time.deltaTime;
-        nextScale.z += _speed * Time.deltaTime;
-        transform.localScale = nextScale;
+        transform.localScale += Vector3.one * _growSpeed * Time.deltaTime;
     }
 }
